@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+}
+body{
+    font-family: sans-serif;
+    padding: 10px;
+}
+.nav2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+    margin: auto;
+    margin-top: 20px;
+    background-color: rgb(218, 216, 216);
+    padding: 20px;
+    border-radius: 5px;
+}
+.m{
+    width: 95%;
+    margin: auto;
+    padding: 10px 20px;
+    margin-left: -1px;
+}
+.inpSearch{
+    padding: 10px;
+    border-radius: 5px;
+}
+input{
+    border: 1px solid #ccc;
+    outline: none;
+}
+select{
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+}
+.selectProduct{
+    padding: 10px;
+    border-radius: 5px;
+}
+.btnAdd{
+    border: none;
+    padding: 11px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+.btnSort{
+    border: none;
+    padding: 11px;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+button{
+    cursor: pointer;
+}
+table{
+    width: 95%;
+    margin: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,td{
+    border-bottom: 1px solid #ccc;
+    padding: 20px;
+    text-align: start;
+}
+.nameCommentImg{
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px;
+}
+.photo{
+    width: 45px;
+}
+.name{
+    border-bottom: none;
+}
+.p{
+    position: relative;
+    bottom: 17px;
+    left: 20px;
+}
+.profileBtn{
+    width: 30px;
+}
+.editBtn{
+    width: 30px;
+}
+.deleteBtn{
+    width: 30px;
+}
+.editDeleteProfile{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 25px;
+    position: relative;
+    padding-left: 15px;
+}
+.addUsers{
+    margin: auto;
+    border: none;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(172, 172, 172);
+}
+.editUsers{
+    margin: auto;
+    border: none;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: rgb(172, 172, 172);
+}
+.editUsers input{
+    padding: 10px;
+    width: 300px;
+}
+.formAddUsers input{
+    padding: 10px;
+    width: 300px;
+}
+.select{
+    padding: 10px;
+    width: 320px;
+}
+.btnSave{
+    border: none;
+    background-color: green;
+    color: white;
+    padding: 10px;
+    width: 70px;
+}
+.btnCancel{
+    border: none;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    width: 70px;
+}
+.profile{
+    margin: auto;
+    border: none;
+    padding: 30px;
+}
+.ma{
+    display: flex;
+    justify-content: space-between;
+}
+.chekbox{
+    width: 30px;
+    height: 30px;
+}

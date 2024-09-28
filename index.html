@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <dialog class="addUsers">
+        <h1>Add Users</h1>
+        <br>
+        <form  class="formAddUsers">
+            <input type="url" placeholder="https://" name="inpImage">
+            <br><br>
+            <input type="text" placeholder="Name Of Product" name="inpName">
+            <br><br>
+            <input type="text" placeholder="Comment" name="inpComment">
+            <br><br>
+            <select class="selectCategori select" name="selectCategori">
+                <option>Electronics</option>
+                <option>Fashion</option>
+            </select>
+            <br><br>
+            <input type="number" placeholder="Price" name="inpPrice">
+            <br><br>
+            <input type="number" placeholder="Quantity" name="inpQuantity">
+            <br><br>
+            <select name="selectStatus" class="select">
+                <option>true</option>
+                <option>false</optiщn>
+            </select>
+            <br><br>
+            <button class="btnSave" type="submit">Save</button>
+            <button class="btnCancel" type="button">Cancel</button>
+        </form>
+        </dialog>
+        <dialog class="editUsers">
+            <h1>Edit Users</h1>
+            <br>
+            <form  class="formedit">
+                <input type="url" placeholder="https://" name="inpimageedit">
+                <br><br>
+                <input type="text" placeholder="Name Of Product" name="inpnameedit">
+                <br><br>
+                <input type="text" placeholder="Comment" name="inpcomment">
+                <br><br>
+                <select class="selectCategori select" name="selectCategori">
+                    <option>Electronics</option>
+                    <option>Fashion</option>
+                </select>
+                <br><br>
+                <input type="number" placeholder="Price" name="inpPrice">
+                <br><br>
+                <input type="number" placeholder="Quantity" name="inpQuantity">
+                <br><br>
+                <select name="selectStatus" class="select">
+                    <option>true</option>
+                    <option>false</option>
+                </select>
+                <br><br>
+                <button class="btnSave1" type="submit">Save</button>
+                <button class="btnCancel1" type="button">Cancel</button>
+            </form>
+            </dialog>
+            <dialog class="profile">
+                <img class="imgPr" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAPFBMVEXk5ueutLepsLPo6uursbXJzc/p6+zj5ea2u76orrKvtbi0ubzZ3N3O0dPAxcfg4uPMz9HU19i8wcPDx8qKXtGiAAAFTElEQVR4nO2d3XqzIAyAhUD916L3f6+f1m7tVvtNINFg8x5tZ32fQAIoMcsEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQTghAJD1jWtnXJPP/54IgNzZQulSmxvTH6oYXX4WS+ivhTbqBa1r26cvCdCu6i0YXbdZ0o4A1rzV+5IcE3YE+z58T45lqo7g1Aa/JY5tgoqQF3qb382x7lNzBLcxft+O17QUYfQI4IIeklKsPSN4i6LKj/7Zm8n99RbHJpEw9gEBXNBpKIYLJqKYRwjOikf//r+J8ZsVuacbqCMNleI9TqGLGqMzhnVdBOdd6F/RlrFijiCoVMk320CBIahUxTWI0KKEcJqKbMdpdJb5QvdHq6wCI5qhKlgGMS/RBHkubWDAE+QZxB4xhCyDiDkLZxgGEVdQldzSKbTIhmZkFkSEPcVvmBn2SMuZB9od7fQDsMiDdKJjFUSCQarM5WirZ3C2TT/htYnyPcPfgrFHWz0BI74gr6J/IZiGUxAZGQLqmvQLTrtE/Go4YxhVRIpEw+sww1IIcqr5NKmUUzLF3d4/qPkYIp2T/obPuemlojFUR4t9Q2Vojhb7BmgElWHzLPH8hucfpefPNFTVgs9h1AdU/Pin96vwWbWdf+X9Absn3OdO34aMdsDnP8WgKYisTqI6CkNGqZQo1XA6Ef6AU32SJzOcBukHPF07/xNSgmHKa5BOhtezv6mA/rYJpwXNAnbRZ1XuF3BzDcO3vpA3+ny2909gbqE4hhD3LIPhLLyBNhPZvbZ3B+3tPYa18A7auSlXQayKwTPNLKDcuOB0xPYKDPFTkWsevQPRZ1J8Hji9I1KQ34r7hZhrwNwOZ97QxNx0drwn4QI0wQk1DcEsfKCWKdxVvxPSNUIp/knmAXT+nT+Ko3+0H96rcNb3m1fx7MBTJdeBJ7uFcWsc0wvgAsC4pROW0l2inbAmIBv/7GZmuhQH6API2rr8T0e6yuZJ+80A9LZeG62T3tik31XwxtwZcizKuTHkMjB1WdZde4Kmic/A5ZI3rr1ae21d08PlVHYfAaxw9G9CYRbJ+8ZdbTcMRV1XM3VdF0M32vtoTdZ0+u29s0OttJ5bz64UwinjaFMVY9vkqc3KKSxN21Xl+0L4Q3Vuv1tYl0pqnX6ms4XetFz7gdZVAgUEoJntfOUe4ZwsHd9FzqQ3Vv6xe41l0XJcqcKl6TZvlv7ClAW3BsqQW4X7ypApB8dmTgK4IX5wvqIVj33HtD2qSG4BqznxdIefL27Y4sahi0MdIdvUsDva8agGGbCtITmCY31MHD2O0uIdh/0rJDQ1VX5Zdxz3rR2QDbv6qXl9vudzqQtGm1Jv9LDXOsfvvB7VcZ8PDKD0mQ1VHPYQ9O+Yj4hR1IUD8rBnn3ho2m8oQMxbCFiKlL2ioSW5heeJqegED52CzxCtcGD3Kv8Wms9EYLyUhwaFIhSMBClevWEmiK/Iaogu4H7sg6ppQhQG8RUqivuTGOAJOg6FfgW0q0M0PQMRMEgXaeNf3SYDZ8PIMI0+wHgr/MgN7wYwpiLjCCqM6ydUDZLQiB6nDdNC8SDyig3jPPpFXGcC9O8BUBDVmgBY59E7Md/35Loe/UVEECEJwYggJjELZ4J71SaQSBeC02n4Da29CayJNA28SAhd2CQyC1Xw6pSmGSINQVuMhAZp4DClan9MgmkDDNmezqwS8sgtlXK/EPBhoaSmYVC/F7IO1jQEdHOlabpKh3+jzLQSTUiq4X2I+Ip/zU8rlaqAvkS21ElR+gqu3zbjjL+hIAiCIAiCIAiCIAiCsCf/AKrfVhSbvA+DAAAAAElFTkSuQmCC" alt="">
+                <br>
+                <br>
+                <div class="ma">
+                    <h3>Name :</h3>    
+                    <h3 class="h3Pr">Kiwi</h3>
+                </div>
+                <br>
+                <div class="ma">
+                    <h3>Category :</h3>
+                    <h3 class="h3Pr">Fashion</h3>
+                </div>
+                <br>
+                <div class="ma">
+                    <h3>Price :</h3>    
+                    <h3 class="h3Pr2">	120</h3>
+                </div>
+                <br>
+                <div class="ma">
+                    <h3>Quantity :</h3>
+                    <h3 class="h3Pr3">	1000000</h3>
+                </div>
+                <br>
+                <div class="ma">
+                    <h3>Status :</h3>
+                    <h3 class="h3Pr4">In stock</h3>
+                </div>
+            </dialog>
+        
+    <div class="m">
+        <h1>Product List</h1>
+    </div>
+    <div class="nav2">
+        <div class="form">
+            <form class="formSearch">
+                <input class="inpSearch" type="search" placeholder="Search 9 records..." name="inpSearch">
+            </form>
+        </div>
+        <div class="selectButton">
+            <button class="DelSel">Delete With Checkbox</button>
+            <button class="btnSort">Sort</button>
+            <button class="btnAdd">Add Product</button>
+        </div>
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>#</th>
+                <th>PRODUCT DETAIL</th>
+                <th>CATEGORIES</th>
+                <th>PRICE</th>
+                <th>QTY</th>
+                <th>STATUS</th>
+                <th>ACTIONS</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            
+        </tbody>
+    </table>
+    <script src="./index.js"></script>
+</body>
+</html>
